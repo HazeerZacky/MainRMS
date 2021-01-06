@@ -241,5 +241,14 @@
           </div>
       </div>
 
+      <br>
+      <!-- Footer Part  -->
+      <section id="footer">
+        <div class="jumbotrom">
+                  <div class="card">
+                  <p class="card-header" align="center"><b>Thanks for visiting | Powered by <a href="#"> Resulect</a></b></p>
+                  </div>
+            </div>
+      </section>
 </body>
 </html>
