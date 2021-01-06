@@ -1,13 +1,29 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
-    <script src="{{ asset('js/propper.min.js')}}"></script>
-    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
 
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}">  <!--Style CSS-->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">  <!--Bootstap Main CSS-->
+    <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.min.css')}}"> <!--Datatable CSS-->
+    <link rel="stylesheet" href="{{ asset('css/responsive.bootstrap.min.css')}}"> <!--Responsive CSS-->
+
+    <!-- Scrips -->
+    <script src="{{ asset('js/propper.min.js')}}"></script> <!--Propper JS-->
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script> <!--Bootstap Main JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ asset('js/popper.min.js')}}" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/bootstrap.min.jss')}}" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery-3.5.1.js')}}" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('js/dataTables.bootstrap5.min.js')}}"></script>
+    <script src="{{ asset('js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{ asset('js/responsive.bootstrap.min.js')}}"></script>
+ 
+
+
     <title>Class Page</title>
 </head>
 <body>
@@ -236,6 +252,7 @@
                       @endforeach
                     </tbody>
                   </table>
+                    
                 </div>
             </div>
           </div>
