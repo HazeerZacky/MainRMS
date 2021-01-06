@@ -60,8 +60,6 @@ class MyController extends Controller
         $req->validate([
             'CName'=>'required|min:4',
             'CType'=>'required',
-            'CYear'=>'required|integer|digits:4',
-            'CTName'=>'required',
             
 
         ],[
@@ -71,15 +69,6 @@ class MyController extends Controller
 
             //Class Type Add
             'CType.required'=>'Please select Class Type',
-
-            //Class Year Add
-            'CYear.required'=>'Class Year is must',
-            'CYear.digits'=>'Class Year is not valid',
-            'CYear.integer'=>'Class Year is only number',
-
-            //Class Teacher Name Add
-            'CTName.required'=>'Class Teacher Name is must',
-        
         ]);
 
         $cnt = count(DB::table('clas')->get());
@@ -87,8 +76,6 @@ class MyController extends Controller
         $cls = new clas;
         $cls->class_name = $req->CName;
         $cls->class_type = $req->CType;
-        $cls->class_year = $req->CYear;
-        $cls->class_teacher = $req->CTName;
 
         $cls->save();
 
@@ -107,33 +94,19 @@ class MyController extends Controller
         $req->validate([
             'ECName'=>'required|min:4',
             'ECType'=>'required',
-            'ECYear'=>'required|size:4|integer',
-            'ECTName'=>'required',
             
-
         ],[
             //Class name Add
             'ECName.required'=>'Class Name is must',
             'ECName.min'=>'Class Name Minimum 4 letters must',
 
             //Class Type Add
-            'ECType.required'=>'Please select Class Yype',
-
-            //Class Year Add
-            'ECYear.required'=>'Class Year is must',
-            'ECYear.digits'=>'Class Year is not valid',
-            'ECYear.integer'=>'Class Year is only number',
-
-            //Class Teacher Name Add
-            'ECTName.required'=>'Class Teacher Name is must',
-        
+            'ECType.required'=>'Please select Class Type',
         ]);
 
         DB::table('clas')->where('id' , $req->ECId)->update([
             'class_name' => $req->ECName,
             'class_type' => $req->ECType,
-            'class_year' => $req->ECYear,
-            'class_teacher' => $req->ECTName,
             
         ]);
 

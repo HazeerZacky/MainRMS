@@ -115,14 +115,6 @@
                             <option value="PrimaryLevel">Primary Level</option>
                         </select>
                     </div>  
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Class Year:</label>
-                        <input type="text" class="form-control" id="" name="CYear" placeholder="Enter class year">
-                    </div>  
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Class Teacher Name:</label>
-                        <input type="text" class="form-control" id="" name="CTName" placeholder="Enter class teacher name">
-                    </div> 
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -161,16 +153,7 @@
                             <option value="SecondaryLevel">Secondary Level</option>
                             <option value="PrimaryLevel">Primary Level</option>
                         </select>
-                    </div>  
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Class Year:</label>
-                        <input type="text" class="form-control" id="ECYear" name="ECYear" placeholder="Enter class year">
-                    </div>  
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Class Teacher Name:</label>
-                        <input type="text" class="form-control" id="ECTName" name="ECTName" placeholder="Enter class teacher name">
                     </div> 
-                      
                       <button type="submit" class="btn btn-primary">Save changes</button>      
                 </form>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -184,14 +167,10 @@
         var id = document.getElementById('id' +i).value;
         var name = document.getElementById('name' +i).value;
         var type = document.getElementById('type' +i).value;
-        var year = document.getElementById('year' +i).value;
-        var teacher = document.getElementById('teacher' +i).value;
 
         document.getElementById('ECID').value = id;
         document.getElementById('ECName').value = name;
         document.getElementById('ECType').value = type;
-        document.getElementById('ECYear').value = year;
-        document.getElementById('ECTName').value = teacher;
       }
     </script>
 
@@ -234,8 +213,6 @@
                         <th scope="col">Class ID</th>
                         <th scope="col">Class Name</th>
                         <th scope="col">Class Type</th>
-                        <th scope="col">Class Year</th>
-                        <th scope="col">Class Teacher</th>
                         <th style="width:  12%">Action</th>
                       </tr>
                     </thead>
@@ -246,14 +223,10 @@
                         <th>{{$cls->id}}</th>
                         <th>{{$cls->class_name}}</th>
                         <th>{{$cls->class_type}}</th>
-                        <th>{{$cls->class_year}}</th>
-                        <th>{{$cls->class_teacher}}</th>
                         <td>
                           <input type="hidden" id="id<?php echo $k; ?>" value="{{$cls->id}}">
                           <input type="hidden" id="name<?php echo $k; ?>" value="{{$cls->class_name}}">
                           <input type="hidden" id="type<?php echo $k; ?>" value="{{$cls->class_type}}">
-                          <input type="hidden" id="year<?php echo $k; ?>" value="{{$cls->class_year}}">
-                          <input type="hidden" id="teacher<?php echo $k; ?>" value="{{$cls->class_teacher}}">
                             <a  href="{{route('delete',$cls->id)}}" class="btn btn-danger btn-sm">Delete</a> <!-- $cls->id = passing variable-->
                             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" onclick="edit(<?php echo $k; ?>)" data-bs-target="#edit">Edit</button>
                             
