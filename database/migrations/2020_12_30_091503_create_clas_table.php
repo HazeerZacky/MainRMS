@@ -16,8 +16,6 @@ class CreateClasTable extends Migration
         Schema::create('clas', function (Blueprint $table) {
             $table->id();
             $table->string('class_name');
-            $table->integer('class_year');
-            $table->string('class_teacher');
             $table->string('class_type');
             $table->timestamps();
         });

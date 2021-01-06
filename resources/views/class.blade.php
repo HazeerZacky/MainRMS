@@ -1,13 +1,29 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
-    <script src="{{ asset('js/propper.min.js')}}"></script>
-    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
 
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}">  <!--Style CSS-->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">  <!--Bootstap Main CSS-->
+    <link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap5.min.css')}}"> <!--Datatable CSS-->
+    <link rel="stylesheet" href="{{ asset('css/responsive.bootstrap.min.css')}}"> <!--Responsive CSS-->
+
+    <!-- Scrips -->
+    <script src="{{ asset('js/propper.min.js')}}"></script> <!--Propper JS-->
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script> <!--Bootstap Main JS-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{ asset('js/popper.min.js')}}" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/bootstrap.min.jss')}}" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery-3.5.1.js')}}" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('js/dataTables.bootstrap5.min.js')}}"></script>
+    <script src="{{ asset('js/dataTables.responsive.min.js')}}"></script>
+    <script src="{{ asset('js/responsive.bootstrap.min.js')}}"></script>
+ 
+
+
     <title>Class Page</title>
 </head>
 <body>
@@ -115,14 +131,6 @@
                             <option value="PrimaryLevel">Primary Level</option>
                         </select>
                     </div>  
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Class Year:</label>
-                        <input type="text" class="form-control" id="" name="CYear" placeholder="Enter class year">
-                    </div>  
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Class Teacher Name:</label>
-                        <input type="text" class="form-control" id="" name="CTName" placeholder="Enter class teacher name">
-                    </div> 
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -161,16 +169,7 @@
                             <option value="SecondaryLevel">Secondary Level</option>
                             <option value="PrimaryLevel">Primary Level</option>
                         </select>
-                    </div>  
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Class Year:</label>
-                        <input type="text" class="form-control" id="ECYear" name="ECYear" placeholder="Enter class year">
-                    </div>  
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Class Teacher Name:</label>
-                        <input type="text" class="form-control" id="ECTName" name="ECTName" placeholder="Enter class teacher name">
                     </div> 
-                      
                       <button type="submit" class="btn btn-primary">Save changes</button>      
                 </form>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -184,14 +183,10 @@
         var id = document.getElementById('id' +i).value;
         var name = document.getElementById('name' +i).value;
         var type = document.getElementById('type' +i).value;
-        var year = document.getElementById('year' +i).value;
-        var teacher = document.getElementById('teacher' +i).value;
 
         document.getElementById('ECID').value = id;
         document.getElementById('ECName').value = name;
         document.getElementById('ECType').value = type;
-        document.getElementById('ECYear').value = year;
-        document.getElementById('ECTName').value = teacher;
       }
     </script>
 
@@ -228,14 +223,12 @@
                     </div>
                     <br>
                   <!-- table -->
-                  <table class="table table-dark table-hover">
+                  <table class="table table-dark table-hover" id="example">
                     <thead>
                       <tr>
                         <th scope="col">Class ID</th>
                         <th scope="col">Class Name</th>
                         <th scope="col">Class Type</th>
-                        <th scope="col">Class Year</th>
-                        <th scope="col">Class Teacher</th>
                         <th style="width:  12%">Action</th>
                       </tr>
                     </thead>
@@ -246,14 +239,10 @@
                         <th>{{$cls->id}}</th>
                         <th>{{$cls->class_name}}</th>
                         <th>{{$cls->class_type}}</th>
-                        <th>{{$cls->class_year}}</th>
-                        <th>{{$cls->class_teacher}}</th>
                         <td>
                           <input type="hidden" id="id<?php echo $k; ?>" value="{{$cls->id}}">
                           <input type="hidden" id="name<?php echo $k; ?>" value="{{$cls->class_name}}">
                           <input type="hidden" id="type<?php echo $k; ?>" value="{{$cls->class_type}}">
-                          <input type="hidden" id="year<?php echo $k; ?>" value="{{$cls->class_year}}">
-                          <input type="hidden" id="teacher<?php echo $k; ?>" value="{{$cls->class_teacher}}">
                             <a  href="{{route('delete',$cls->id)}}" class="btn btn-danger btn-sm">Delete</a> <!-- $cls->id = passing variable-->
                             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" onclick="edit(<?php echo $k; ?>)" data-bs-target="#edit">Edit</button>
                             
@@ -263,10 +252,24 @@
                       @endforeach
                     </tbody>
                   </table>
+                  <script>
+                      $(document).ready(function() {
+                          $('#example').DataTable();
+                      } );
+                    </script>
                 </div>
             </div>
           </div>
       </div>
 
+      <br>
+      <!-- Footer Part  -->
+      <section id="footer">
+        <div class="jumbotrom">
+                  <div class="card">
+                  <p class="card-header" align="center"><b>Thanks for visiting | Powered by <a href="#"> Resulect</a></b></p>
+                  </div>
+            </div>
+      </section>
 </body>
 </html>
