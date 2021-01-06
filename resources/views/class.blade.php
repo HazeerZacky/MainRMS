@@ -124,7 +124,7 @@
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Class Type:</label>
                         <select class="form-select form-select mb-3" name="CType">
-                            <option selected>(select one option)</option>
+                            <option value="" selected disabled hidden>(select one option)</option>
                             <option value="GCE-A/L">GCE Advanced Level</option>
                             <option value="GCE-O/L">GCE Ordinary Level</option>
                             <option value="SecondaryLevel">Secondary Level</option>
@@ -163,7 +163,7 @@
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Class Type:</label>
                         <select class="form-select form-select mb-3" id="ECType" name="ECType">
-                            <option selected>(select one option)</option>
+                            <option value="" selected disabled hidden>(select one option)</option>
                             <option value="GCE-A/L">GCE Advanced Level</option>
                             <option value="GCE-O/L">GCE Ordinary Level</option>
                             <option value="SecondaryLevel">Secondary Level</option>
