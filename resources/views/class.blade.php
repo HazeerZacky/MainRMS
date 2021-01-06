@@ -223,7 +223,7 @@
                     </div>
                     <br>
                   <!-- table -->
-                  <table class="table table-dark table-hover">
+                  <table class="table table-dark table-hover" id="example">
                     <thead>
                       <tr>
                         <th scope="col">Class ID</th>
@@ -252,7 +252,11 @@
                       @endforeach
                     </tbody>
                   </table>
-                    
+                  <script>
+                      $(document).ready(function() {
+                          $('#example').DataTable();
+                      } );
+                    </script>
                 </div>
             </div>
           </div>
