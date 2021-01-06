@@ -13,7 +13,7 @@ class hanancontroller extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
